@@ -2,6 +2,8 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -14,6 +16,9 @@ public class ExpenseTracker extends Application {
         public void start(Stage primaryStage) {
             Daily test = new Daily();
             GridPane root = new GridPane();
+            Tab valuesDaily = new Tab("Set values", root);
+            TabPane tabs = new TabPane(valuesDaily);
+
             root.setStyle("-fx-background-color: #908985");
             root.setAlignment(Pos.CENTER);
             root.setHgap(10);
@@ -45,7 +50,7 @@ public class ExpenseTracker extends Application {
             root.add(readTextField, 1, 2);
             root.add(actionTarget, 1, 6);
 
-            Scene scene = new Scene(root, 300, 250);
+            Scene scene = new Scene(tabs, 300, 250);
 
             primaryStage.setTitle("Hello, World!");
             primaryStage.setScene(scene);
