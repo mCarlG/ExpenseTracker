@@ -14,6 +14,7 @@ public class ExpenseTracker extends Application {
         public void start(Stage primaryStage) {
             Daily test = new Daily();
             GridPane root = new GridPane();
+            root.setStyle("-fx-background-color: #908985");
             root.setAlignment(Pos.CENTER);
             root.setHgap(10);
             root.setVgap(10);
