@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
@@ -11,6 +12,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !! ENSURE YOU CHECK WHETHER RETURNED LISTS ARE EMPTY !!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public class Account {
     private Map<Integer, Map<Integer, Map<Integer, List<Transaction>>>> transactionsByDate = new HashMap<>();
@@ -33,13 +37,24 @@ public class Account {
         transactionsByDate = gson.fromJson(new FileReader(jsonFileName), type);
     }
 
+    public void saveToJsonFile(String jsonFileName) throws IOException {
+        Gson gson = new Gson();
+        String json = gson.toJson(transactionsByDate);
+
+        try (FileWriter writer = new FileWriter(jsonFileName)) {
+            writer.write(json);
+        }
+    }
+
     public void addTransaction(Transaction transaction) {
         LocalDate date = transaction.getDate();
-        int year = date.getYear();
+        int year = date.getYearValue();
         int month = date.getMonthValue();
-        int day = date.getDayOfMonth();
+        int day = date.getDayValue();
 
-        // Nice little method to add hashmaps and arrays as necessary.
+        // Nice little method to add hashmaps and arrays as necessary. Lambdas (second arg) are so much fun btw.
+        // Lambdas are an anonymous function that may be passed as an argument. Can be used for callbacks or general
+        // polymorphic function calls.
         transactionsByDate
                 .computeIfAbsent(year, y -> new HashMap<>())
                 .computeIfAbsent(month, m -> new HashMap<>())
