@@ -160,10 +160,3 @@ public class PersonalSpendingExpense extends Expense {
         return this.totalExpense;
     }
 }
-
-
-
-// Methods needed:
-// -A method to add expenses to a list of expenses when a button is clicked
-// - Maybe sort the expenses by cost?
-// - Create an expense report?
