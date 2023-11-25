@@ -27,4 +27,11 @@ public class ExpenseDisplayController {
     @FXML
     private TextField totalUtilityDisp;
 
+    public void setBudgetData(String amount, String personal, String savings, String utilities) {
+        budgetDisp.setText(amount);
+        totalPersonalDisp.setText(personal);
+        totalSavingsDisp.setText(savings);
+        totalUtilityDisp.setText(utilities);
+    }
+
 }

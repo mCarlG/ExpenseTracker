@@ -64,6 +64,9 @@ public class ExpenseTrackerController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ExpenseDisplay.fxml"));
             Parent root = loader.load();
 
+            ExpenseDisplayController displayController = loader.getController();
+            displayController.setBudgetData(amount.getText(), personal.getText(), savings.getText(), utilities.getText());
+
 
             Stage expenseDisplayStage = new Stage();
             expenseDisplayStage.setTitle("Expense Display");
