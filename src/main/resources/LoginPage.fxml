@@ -7,22 +7,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane prefHeight="431.0" prefWidth="600.0">
-         <children>
-            <Button fx:id="loginbutton" layoutX="169.0" layoutY="295.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="262.0" text="LOG IN" />
-            <Label layoutX="272.0" layoutY="116.0" text="Username" />
-            <Label layoutX="274.0" layoutY="202.0" text="Password" />
-            <TextField fx:id="username" layoutX="225.0" layoutY="149.0" promptText="username" />
-            <TextField fx:id="password" layoutX="225.0" layoutY="234.0" promptText="password" />
-            <Label layoutX="100.0" layoutY="35.0" text="EXPENSE TRACKER">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.uncw.expensetracker.driver.LoginController">
+   <AnchorPane prefHeight="431.0" prefWidth="600.0">
+      <Button fx:id="loginButton" layoutX="169.0" layoutY="295.0" mnemonicParsing="false" onAction="#loginPressed"
+              prefHeight="25.0" prefWidth="262.0" text="LOG IN"/>
+      <Label layoutX="272.0" layoutY="116.0" text="Username"/>
+      <Label layoutX="274.0" layoutY="202.0" text="Password"/>
+      <TextField fx:id="username" layoutX="225.0" layoutY="149.0" promptText="username"/>
+      <TextField fx:id="password" layoutX="225.0" layoutY="234.0" promptText="password"/>
+      <Label layoutX="100.0" layoutY="35.0" text="EXPENSE TRACKER">
+         <font>
+            <Font size="48.0"/>
+         </font>
+      </Label>
+   </AnchorPane>
 </VBox>

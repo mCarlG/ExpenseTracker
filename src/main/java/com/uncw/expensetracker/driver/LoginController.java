@@ -13,7 +13,7 @@ import java.io.IOException;
 public class LoginController {
 
     @FXML
-    private Button loginbutton;
+    private Button loginButton;
 
     @FXML
     private TextField password;
@@ -36,7 +36,7 @@ public class LoginController {
             expenseTrackerStage.show();
 
 
-            ((Stage) loginbutton.getScene().getWindow()).close();
+            ((Stage) loginButton.getScene().getWindow()).close();
         } catch (IOException e) {
             e.printStackTrace();
         }
