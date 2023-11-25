@@ -1,4 +1,4 @@
-package records;
+package com.uncw.expensetracker.records;
 
 public class LocalDate {
     int year;

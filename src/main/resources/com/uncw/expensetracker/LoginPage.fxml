@@ -12,7 +12,7 @@
    <children>
       <AnchorPane prefHeight="431.0" prefWidth="600.0">
          <children>
-            <Button fx:id="logInbutton" layoutX="169.0" layoutY="295.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="262.0" text="LOG IN" />
+            <Button fx:id="loginbutton" layoutX="169.0" layoutY="295.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="262.0" text="LOG IN" />
             <Label layoutX="272.0" layoutY="116.0" text="Username" />
             <Label layoutX="274.0" layoutY="202.0" text="Password" />
             <TextField fx:id="username" layoutX="225.0" layoutY="149.0" promptText="username" />
