@@ -42,5 +42,5 @@
     <TextField fx:id="savingsActual" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
     <TextField fx:id="savingsBudget" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
     <TextField fx:id="savingsPercent" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
-    <Button mnemonicParsing="false" text="Load Day" GridPane.columnIndex="2" onAction="#loadMonth"/>
+    <Button mnemonicParsing="false" text="Load Month" GridPane.columnIndex="2" onAction="#loadMonth"/>
 </GridPane>
