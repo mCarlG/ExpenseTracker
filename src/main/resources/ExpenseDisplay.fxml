@@ -24,13 +24,13 @@
         <Label layoutX="14.0" layoutY="72.0" text="Total Utility"/>
         <Label layoutX="14.0" layoutY="104.0" text="Total Personal"/>
         <Label layoutX="14.0" layoutY="136.0" text="Total Savings"/>
-        <TextField fx:id="totalUtilityDisp" layoutX="108.0" layoutY="68.0"/>
-        <TextField fx:id="totalPersonalDisp" layoutX="108.0" layoutY="100.0"/>
-        <TextField fx:id="totalSavingsDisp" layoutX="108.0" layoutY="132.0"/>
-        <TextField fx:id="budgetDisp" layoutX="108.0" layoutY="32.0"/>
+        <TextField fx:id="totalUtilityDisp" editable="false" focusTraversable="false" layoutX="108.0" layoutY="68.0" />
+        <TextField fx:id="totalPersonalDisp" editable="false" focusTraversable="false" layoutX="108.0" layoutY="100.0" />
+        <TextField fx:id="totalSavingsDisp" editable="false" focusTraversable="false" layoutX="108.0" layoutY="132.0" />
+        <TextField fx:id="budgetDisp" editable="false" focusTraversable="false" layoutX="108.0" layoutY="32.0" />
         <Label layoutX="14.0" layoutY="36.0" text="Budget"/>
         <PieChart fx:id="pieDisp" layoutX="273.0" layoutY="1.0" prefHeight="400.0" prefWidth="323.0"/>
-        <TextField fx:id="leftOverDisp" layoutX="108.0" layoutY="167.0"/>
+        <TextField fx:id="leftOverDisp" editable="false" focusTraversable="false" layoutX="108.0" layoutY="167.0" />
         <Label layoutX="20.0" layoutY="171.0" text="Left Over"/>
     </AnchorPane>
 </VBox>

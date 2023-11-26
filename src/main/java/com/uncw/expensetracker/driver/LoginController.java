@@ -24,6 +24,9 @@ public class LoginController {
     @FXML
     void loginPressed(ActionEvent event) {
         try {
+            if (username.getText().isBlank() || password.getText().isBlank()){
+                throw new IllegalArgumentException();
+            }
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ExpenseTracker.fxml"));
             Parent root = loader.load();
 
@@ -39,6 +42,13 @@ public class LoginController {
             ((Stage) loginButton.getScene().getWindow()).close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        catch (IllegalArgumentException e){
+            username.setText("Enter Username");
+            username.selectAll();
+            username.requestFocus();
+            password.setText("Enter Password");
+            password.selectAll();
         }
     }
 
