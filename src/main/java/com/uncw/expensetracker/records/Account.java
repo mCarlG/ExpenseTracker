@@ -3,6 +3,7 @@ package com.uncw.expensetracker.records;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -32,21 +33,21 @@ public class Account {
 
     // The idea here is to have a default constructor to allow a new account to be created, or load a pre-existing
     // account be passing a filename to the constructor.
-    public Account(String jsonFileName) throws IOException {
+    public Account(File jsonFileName) throws IOException {
         loadFromJsonFile(jsonFileName);
     }
 
-    private void loadFromJsonFile(String jsonFileName) throws IOException {
+    private void loadFromJsonFile(File jsonFile) throws IOException {
         Gson gson = new Gson();
         java.lang.reflect.Type type = new TypeToken<Map<Integer, Map<Integer, Map<Integer, List<Transaction>>>>>(){}.getType();
-        transactionsByDate = gson.fromJson(new FileReader(jsonFileName), type);
+        transactionsByDate = gson.fromJson(new FileReader(jsonFile), type);
     }
 
-    public void saveToJsonFile(String jsonFileName) throws IOException {
+    public void saveToJsonFile(File jsonFile) throws IOException {
         Gson gson = new Gson();
         String json = gson.toJson(transactionsByDate);
 
-        try (FileWriter writer = new FileWriter(jsonFileName)) {
+        try (FileWriter writer = new FileWriter(jsonFile)) {
             writer.write(json);
         }
     }

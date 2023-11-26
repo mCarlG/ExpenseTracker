@@ -1,16 +1,20 @@
 package com.uncw.expensetracker.driver;
 
-import javafx.event.ActionEvent;
+import com.uncw.expensetracker.records.Account;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.Objects;
 
 public class MenuController {
     private BorderPane root;
+    private Account loadedAccount;
 
     @FXML
     private Menu accountMenu;
@@ -81,28 +85,51 @@ public class MenuController {
         });
     }
 
-    public void setMainLayout(BorderPane root) {
+    public void setRoot(BorderPane root) {
         this.root = root;
+    }
+    public void setLoadedAccount(Account loadedAccount) {
+        this.loadedAccount = loadedAccount;
     }
     @FXML
     void accountPressed() throws IOException {
-        root.setCenter(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Account.fxml"))));
+        FXMLLoader accountLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/fxml/Account.fxml")));
+        VBox subRoot = accountLoader.load();
+        AccountController accountController = accountLoader.getController();
+        accountController.setAccount(loadedAccount);
+        root.setCenter(subRoot);
     }
     @FXML
     void transactionPressed() throws IOException {
-        root.setCenter(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Transaction.fxml"))));
+        FXMLLoader transactionLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/fxml/Transaction.fxml")));
+        GridPane subRoot = transactionLoader.load();
+        TransactionController transactionController = transactionLoader.getController();
+        transactionController.setAccount(loadedAccount);
+        root.setCenter(subRoot);
     }
     @FXML
     void budgetPressed() throws IOException {
-        root.setCenter(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Budget.fxml"))));
+        FXMLLoader budgetLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/fxml/Budget.fxml")));
+        GridPane subRoot = budgetLoader.load();
+        BudgetController budgetController = budgetLoader.getController();
+        budgetController.setAccount(loadedAccount);
+        root.setCenter(subRoot);
     }
     @FXML
     void dailyPressed() throws IOException {
-        root.setCenter(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Daily.fxml"))));
+        FXMLLoader dailyLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/fxml/Daily.fxml")));
+        GridPane subRoot = dailyLoader.load();
+        DailyController dailyController = dailyLoader.getController();
+        dailyController.setAccount(loadedAccount);
+        root.setCenter(subRoot);
     }
     @FXML
     void monthlyPressed() throws IOException {
-        root.setCenter(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Monthly.fxml"))));
+        FXMLLoader monthlyLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/fxml/Monthly.fxml")));
+        GridPane subRoot = monthlyLoader.load();
+        MonthlyController monthlyController = monthlyLoader.getController();
+        monthlyController.setAccount(loadedAccount);
+        root.setCenter(subRoot);
     }
 
 }

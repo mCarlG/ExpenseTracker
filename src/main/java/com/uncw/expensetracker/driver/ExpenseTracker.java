@@ -19,7 +19,8 @@ public class ExpenseTracker extends Application{
         FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/fxml/Root.fxml")));
         root = loader.load();
         MenuController menuController = loader.getController();
-        menuController.setMainLayout(root);
+        menuController.setRoot(root);
+        menuController.setLoadedAccount(loadedAccount);
 
         Scene scene = new Scene(root, 700, 700);
         scene.getStylesheets().add(String.valueOf(Objects.requireNonNull(getClass().getResource("/css/primary.css"))));
