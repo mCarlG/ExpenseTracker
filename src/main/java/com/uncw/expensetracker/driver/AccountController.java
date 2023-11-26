@@ -4,13 +4,14 @@ import com.uncw.expensetracker.records.Account;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.IOException;
 
 public class AccountController {
+    @FXML
+    public Button newAccount;
     @FXML
     private Button loadAccount;
     @FXML
@@ -20,7 +21,7 @@ public class AccountController {
         this.account = account;
     }
     @FXML
-    void loadAccountPressed(ActionEvent event) throws IOException {
+    void loadAccountPressed() throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open File");
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
@@ -31,7 +32,7 @@ public class AccountController {
         }
     }
     @FXML
-    void saveAccountPressed(ActionEvent event) throws IOException {
+    void saveAccountPressed() throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open File");
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
@@ -42,7 +43,7 @@ public class AccountController {
         }
     }
     @FXML
-    void newAccountPressed(ActionEvent event) {
+    void newAccountPressed() {
         this.account = new Account();
     }
 }
