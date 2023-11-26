@@ -33,7 +33,7 @@ public class DailyController {
     private float totalBillExpense;
     private float totalPersonalExpense;
     private float totalDeposit;
-    private float totalSavings;
+
     public void setAccount(Account account) {
         this.account = account;
     }
@@ -48,5 +48,21 @@ public class DailyController {
 
         if (transactions == null) {return;}
 
+        for (Transaction transaction : transactions) {
+            switch (transaction.getType()) {
+                case "Bills" -> totalBillExpense += transaction.getAmount();
+                case "Personal Expense" -> totalPersonalExpense += transaction.getAmount();
+                case "Deposit" -> totalDeposit += transaction.getAmount();
+            }
+        }
+
+        float totalSavings = totalDeposit - (totalBillExpense + totalPersonalExpense);
+        billsActual.setText("$" + totalBillExpense);
+        personalActual.setText("$" + totalPersonalExpense);
+        savingsActual.setText("$" + totalSavings);
+
+        billsPercent.setText(String.format("%.2f",(totalBillExpense / account.getBillsBudget()) * 100));
+        savingsPercent.setText(String.format("%.2f",(totalSavings / account.getSavingsBudget()) * 100));
+        personalPercent.setText(String.format("%.2f",(totalPersonalExpense / account.getPersonalBudget()) * 100));
     }
 }
