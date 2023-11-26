@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Maven Reload and Run" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.uncw.expensetracker.driver.ExpenseTracker" />
+    <module name="ExpenseTracker" />
+    <method v="2">
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="install" />
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
