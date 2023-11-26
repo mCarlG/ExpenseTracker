@@ -19,7 +19,7 @@ public class BudgetController {
     @FXML
     public void updateBudgetPressed() {
         String budgetType = type.getValue();
-        float budgetAmount = Integer.parseInt(amount.getText());
+        float budgetAmount = Float.parseFloat(amount.getText());
         if (budgetType.equals("Bills")) {
             account.setBillsBudget(budgetAmount);
         } else if (budgetType.equals("Personal Expense")) {

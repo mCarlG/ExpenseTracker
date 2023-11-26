@@ -33,14 +33,14 @@
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Percentage of Budget Used" GridPane.columnIndex="3"
           GridPane.rowIndex="1"/>
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Savings" GridPane.rowIndex="4"/>
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <TextField GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-    <TextField GridPane.columnIndex="3" GridPane.rowIndex="2"/>
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <TextField GridPane.columnIndex="2" GridPane.rowIndex="3"/>
-    <TextField GridPane.columnIndex="3" GridPane.rowIndex="3"/>
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-    <TextField GridPane.columnIndex="2" GridPane.rowIndex="4"/>
-    <TextField GridPane.columnIndex="3" GridPane.rowIndex="4"/>
-    <Button mnemonicParsing="false" text="Load Day" GridPane.columnIndex="2"/>
+    <TextField fx:id="billsActual" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <TextField fx:id="billsBudget" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <TextField fx:id="billsPercent" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+    <TextField fx:id="personalActual" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <TextField fx:id="personalBudget" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+    <TextField fx:id="personalPercent" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+    <TextField fx:id="savingsActual" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <TextField fx:id="savingsBudget" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+    <TextField fx:id="savingsPercent" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+    <Button mnemonicParsing="false" text="Load Day" GridPane.columnIndex="2" onAction="#loadDay"/>
 </GridPane>
