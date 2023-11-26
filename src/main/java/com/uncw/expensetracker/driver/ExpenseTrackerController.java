@@ -95,7 +95,7 @@ public class ExpenseTrackerController implements Initializable {
     @FXML
     void calculatePressed(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ExpenseDisplay.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ExpenseDisplay.fxml"));
             Parent root = loader.load();
 
             ExpenseDisplayController displayController = loader.getController();

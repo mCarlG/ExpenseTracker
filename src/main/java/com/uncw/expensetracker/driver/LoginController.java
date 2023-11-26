@@ -27,7 +27,7 @@ public class LoginController {
             if (username.getText().isBlank() || password.getText().isBlank()){
                 throw new IllegalArgumentException();
             }
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ExpenseTracker.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ExpenseTracker.fxml"));
             Parent root = loader.load();
 
 
