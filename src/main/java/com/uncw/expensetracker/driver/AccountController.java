@@ -1,7 +1,6 @@
 package com.uncw.expensetracker.driver;
 
 import com.uncw.expensetracker.records.Account;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.FileChooser;
@@ -10,8 +9,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class AccountController {
-    @FXML
-    public Button newAccount;
     @FXML
     private Button loadAccount;
     @FXML

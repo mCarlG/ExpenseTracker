@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public class MenuController {
     private BorderPane root;
-    private Account loadedAccount;
+    private Account loadedAccount = new Account();
 
     @FXML
     private Menu accountMenu;
@@ -87,9 +87,6 @@ public class MenuController {
 
     public void setRoot(BorderPane root) {
         this.root = root;
-    }
-    public void setLoadedAccount(Account loadedAccount) {
-        this.loadedAccount = loadedAccount;
     }
     @FXML
     void accountPressed() throws IOException {

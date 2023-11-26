@@ -12,7 +12,6 @@ import java.util.Objects;
 //driver
 public class ExpenseTracker extends Application{
     private BorderPane root;
-    private Account loadedAccount;
 
     @Override
     public void start(Stage stage) throws Exception{
@@ -20,10 +19,9 @@ public class ExpenseTracker extends Application{
         root = loader.load();
         MenuController menuController = loader.getController();
         menuController.setRoot(root);
-        menuController.setLoadedAccount(loadedAccount);
 
         Scene scene = new Scene(root, 700, 700);
-        scene.getStylesheets().add(String.valueOf(Objects.requireNonNull(getClass().getResource("/css/primary.css"))));
+        // scene.getStylesheets().add(String.valueOf(Objects.requireNonNull(getClass().getResource("/css/primary.css"))));
         stage.setTitle("ExpenseTracker");
         stage.setScene(scene);
         stage.show();

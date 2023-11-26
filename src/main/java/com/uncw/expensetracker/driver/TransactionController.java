@@ -23,9 +23,9 @@ public class TransactionController {
         this.account = account;
     }
     @FXML void addTransaction() {
-        this.account.addTransaction(
+        account.addTransaction(
                 new Transaction(
-                        type.getTypeSelector(),
+                        type.getValue(),
                         date.getValue(),
                         Float.parseFloat(amount.getText()),
                         description.getText()

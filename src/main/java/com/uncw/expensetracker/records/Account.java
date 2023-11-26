@@ -73,14 +73,19 @@ public class Account {
                 .add(transaction);
     }
 
-    public List<Transaction> getTransactionsForDay(int year, int month, int day) {
+    public List<Transaction> getTransactionsForDay(LocalDate date) {
+        int year = date.getYear();
+        int month = date.getMonthValue();
+        int day = date.getDayOfMonth();
         // When using the method, null lists must be accounted for.
         return transactionsByDate.getOrDefault(year, Collections.emptyMap())
                 .getOrDefault(month, Collections.emptyMap())
                 .getOrDefault(day, Collections.emptyList());
     }
 
-    public List<Transaction> getTransactionsForMonth(int year, int month) {
+    public List<Transaction> getTransactionsForMonth(LocalDate date) {
+        int year = date.getYear();
+        int month = date.getMonthValue();
         List<Transaction> monthlyTransactions = new ArrayList<>();
         Map<Integer, Map<Integer, List<Transaction>>> yearMap = transactionsByDate.get(year);
 
