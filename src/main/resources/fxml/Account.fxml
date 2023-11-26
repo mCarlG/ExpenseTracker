@@ -7,7 +7,7 @@
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uncw.expensetracker.driver.AccountController">
    <Button fx:id="loadAccount" mnemonicParsing="false" text="Load Account" onAction="#loadAccountPressed"/>
    <Separator layoutX="20.0" layoutY="205.0" prefHeight="36.0" prefWidth="580.0" visible="false" />
-   <Button fx:id="saveAccount" mnemonicParsing="false" text="Save Account" />
+   <Button fx:id="saveAccount" mnemonicParsing="false" text="Save Account" onAction="#saveAccountPressed"/>
    <Separator prefHeight="36.0" prefWidth="580.0" visible="false" />
-   <Button fx:id="newAccount" mnemonicParsing="false" text="New Account" />
+   <Button fx:id="newAccount" mnemonicParsing="false" text="New Account" onAction="#newAccountPressed"/>
 </VBox>

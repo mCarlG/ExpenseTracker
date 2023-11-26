@@ -1,6 +1,7 @@
 package com.uncw.expensetracker.records;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
@@ -38,13 +39,17 @@ public class Account {
     }
 
     private void loadFromJsonFile(File jsonFile) throws IOException {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
+                .create();
         java.lang.reflect.Type type = new TypeToken<Map<Integer, Map<Integer, Map<Integer, List<Transaction>>>>>(){}.getType();
         transactionsByDate = gson.fromJson(new FileReader(jsonFile), type);
     }
 
     public void saveToJsonFile(File jsonFile) throws IOException {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
+                .create();
         String json = gson.toJson(transactionsByDate);
 
         try (FileWriter writer = new FileWriter(jsonFile)) {

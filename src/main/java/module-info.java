@@ -4,7 +4,7 @@ module com.uncw.expensetracker {
     requires com.google.gson;
 
     opens com.uncw.expensetracker.driver to javafx.fxml;
-    opens com.uncw.expensetracker.records to javafx.fxml;
+    opens com.uncw.expensetracker.records to javafx.fxml,com.google.gson;
 
     exports com.uncw.expensetracker.records;
     exports com.uncw.expensetracker.driver;
