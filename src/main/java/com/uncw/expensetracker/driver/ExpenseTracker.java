@@ -21,7 +21,7 @@ public class ExpenseTracker extends Application{
         MenuController menuController = loader.getController();
         menuController.setMainLayout(root);
 
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 700, 700);
         scene.getStylesheets().add(String.valueOf(Objects.requireNonNull(getClass().getResource("/css/primary.css"))));
         stage.setTitle("ExpenseTracker");
         stage.setScene(scene);
